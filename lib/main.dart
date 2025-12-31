@@ -42,24 +42,50 @@ class _UTipState extends State<UTip> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            padding: const EdgeInsets.all(18),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.inversePrimary,
-              borderRadius: BorderRadius.circular(10),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.inversePrimary,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: [
+                  Text("Total per Person",
+                    style: style,
+                  ),
+                  Text("\$230", style: style.copyWith(
+                    color: theme.colorScheme.onPrimary,
+                    fontSize: theme.textTheme.displaySmall!.fontSize,
+                  )),
+                ],
+              )
             ),
-            child: Column(
-              children: [
-                Text("Total per Person",
-                  style: style,
-                ),
-                Text("\$230", style: style.copyWith(
-                  color: theme.colorScheme.onPrimary,
-                  fontSize: theme.textTheme.displaySmall!.fontSize,
-                )),
-              ],
-            )
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(color:theme.colorScheme.primary,)
+              ),
+              child: Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.attach_money),
+                        labelText: 'Bill Amount',),
+                        keyboardType : TextInputType.number,
+                        onChanged: (String value)=>{
+                          print("value : $value");
+                        },
+                    )
+                  ],
+                ),
+            ),
+          )
         ],
       ),
     );
