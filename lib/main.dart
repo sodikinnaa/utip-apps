@@ -79,8 +79,29 @@ class _UTipState extends State<UTip> {
                         labelText: 'Bill Amount',),
                         keyboardType : TextInputType.number,
                         onChanged: (String value)=>{
-                          print("value : $value");
+                          print("value : $value")
                         },
+                    ),
+                    // splitbil area
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Split",
+                          style: theme.textTheme.titleMedium,
+                        ),
+                        Row(
+                          children: [
+                            IconButton(
+                              color: theme.colorScheme.primary,
+                              onPressed: () => {}, icon: Icon(Icons.remove)),
+                            Text("1", style: theme.textTheme.titleMedium),
+                            IconButton(
+                              color: theme.colorScheme.primary,
+                              onPressed: () => {}, icon: Icon(Icons.add)),
+                          ],
+                        )
+                      ],
                     )
                   ],
                 ),
