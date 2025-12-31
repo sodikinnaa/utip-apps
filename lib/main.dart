@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Utip App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
       ),
       home: const UTip(),
     );
@@ -34,17 +34,20 @@ class _UTipState extends State<UTip> {
         title: const Text('UTip Apps'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
             padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-              color: Colors.deepPurple,
+              color: Theme.of(context).colorScheme.inversePrimary,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
               children: [
-                const Text("Total per Person"),
-                const Text("\$87"),
+                Text("Total per Person",
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+                Text("\$87"),
               ],
             )
           ),
